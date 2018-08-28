@@ -1,5 +1,23 @@
 {
+    "name": "howyi/conv-laravel",
+    "description": "MySQL migration query auto generate from ",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name":  "Hayashi Takuya",
+            "email": "qrbys@outlook.com"
+        }
+    ],
+    "minimum-stability": "stable",
     "require": {
-        "howyi/conv": "^1.1"
+        "howyi/conv": "^1.1",
+        "illuminate/support": "^5.5",
+        "illuminate/console": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Conv\\Laravel\\": "src/"
+        }
     }
 }
