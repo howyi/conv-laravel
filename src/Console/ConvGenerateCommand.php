@@ -46,7 +46,7 @@ class ConvGenerateCommand extends Command
         $this->call('migrate');
 
         $filter = function (TableStructureInterface $table) {
-            return !in_array($table->getName(), ['migrations'], true);
+            return !in_array($table->getName(), config('conv.ignore_tables', []), true);
         };
 
         $pdo = \DB::connection()->getPdo();
@@ -57,7 +57,7 @@ class ConvGenerateCommand extends Command
         );
         $schemaDbStructure = DatabaseStructureFactory::fromSqlDir(
             $pdo,
-            'database/schemas',
+            config('conv.paths.schemas', 'database/schemas'),
             $operator,
             $filter
         );
@@ -70,7 +70,7 @@ class ConvGenerateCommand extends Command
         );
 
         $generatedContents = [];
-        $i = (new \GlobIterator('./database/migrations/*.php'))->count();
+        $i = (new \GlobIterator('./' . config('conv.paths.migrations', 'database/migrations') . '/*.php'))->count();
         foreach ($alterMigrations->getMigrationList() as $migration) {
             $migrationName = $this->getMigrationName($migration);
             $fileName = date('Y_m_d_His_') . $migrationName . "_$i";
@@ -144,7 +144,7 @@ EOL;
 
         if (0 !== count($generatedContents)) {
             foreach ($generatedContents as $filename => $content) {
-                file_put_contents("./database/migrations/$filename", $content);
+                file_put_contents("./" . config('conv.paths.migrations', 'database/migrations') . "/$filename", $content);
             }
         }
     }

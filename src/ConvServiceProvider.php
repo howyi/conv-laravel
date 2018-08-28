@@ -2,6 +2,8 @@
 
 namespace Conv\Laravel;
 
+use Conv\Laravel\Console\ConvGenerateCommand;
+use Conv\Laravel\Console\ConvReflectCommand;
 use Illuminate\Support\ServiceProvider;
 
 class ConvServiceProvider extends ServiceProvider
@@ -13,9 +15,8 @@ class ConvServiceProvider extends ServiceProvider
 	{
 		if (!$this->isLumen()) {
 			$this->publishes([
-				// __DIR__.'/path/to/views' => base_path('resources/views/vendor/courier'),
 				__DIR__ . '/../config/conv.php' => config_path('conv.php'),
-			], 'conv');
+			]);
 		}
 	}
 
@@ -25,7 +26,8 @@ class ConvServiceProvider extends ServiceProvider
 	public function register()
 	{
 		$this->commands([
-
+            ConvReflectCommand::class,
+            ConvGenerateCommand::class,
 		]);
 	}
 

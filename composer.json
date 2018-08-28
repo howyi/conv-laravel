@@ -1,6 +1,6 @@
 {
     "name": "howyi/conv-laravel",
-    "description": "MySQL migration query auto generate from ",
+    "description": "MySQL migration query auto generate",
     "type": "library",
     "license": "MIT",
     "authors": [

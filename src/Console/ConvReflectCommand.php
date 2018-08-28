@@ -46,12 +46,12 @@ class ConvReflectCommand extends Command
             $this->output
         );
         $filter = function (TableStructureInterface $table) {
-            return !in_array($table->getName(), ['migrations'], true);
+            return !in_array($table->getName(), config('conv.ignore_tables', []), true);
         };
         CreateQueryReflector::fromPDO(
             \DB::connection()->getPdo(),
             \DB::getDatabaseName(),
-            'database/schemas',
+            config('conv.paths.schemas', 'database/schemas'),
             $operator,
             $filter
         );
