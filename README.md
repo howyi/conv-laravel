@@ -1,21 +1,21 @@
 # conv-laravel
 
-MySQL migration query auto generate
+MySQL migration query auto generate on Laravel/Lumen
 
 
 ## Install
 
-1. require library
+1. require library (Laravel/Lumen)
 ```
 composer require "howyi/conv-laravel" --dev
 ```
 
-2. publish config
+2. publish config (only Laravel)
 ```
 php artisan vendor:publish --provider="Conv\Laravel\ConvServiceProvider"
 ```
 
-3. schema initialize
+3. schema initialize (Laravel/Lumen)
 ```
 php artisan conv:reflect
 ```
