@@ -1,9 +1,9 @@
 <?php
 
-namespace Conv\Laravel;
+namespace Howyi\ConvLaravel;
 
-use Conv\Laravel\Console\ConvGenerateCommand;
-use Conv\Laravel\Console\ConvReflectCommand;
+use Howyi\ConvLaravel\Console\ConvGenerateCommand;
+use Howyi\ConvLaravel\Console\ConvReflectCommand;
 use Illuminate\Support\ServiceProvider;
 
 class ConvServiceProvider extends ServiceProvider

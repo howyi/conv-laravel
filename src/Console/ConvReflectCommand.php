@@ -1,6 +1,6 @@
 <?php
 
-namespace Conv\Laravel\Console;
+namespace Howyi\ConvLaravel\Console;
 
 use Conv\Operator;
 use Conv\Structure\TableStructureInterface;

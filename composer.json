@@ -17,7 +17,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Conv\\Laravel\\": "src/"
+            "Howyi\\ConvLaravel\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Howyi\\ConvLaravel\\ConvServiceProvider"
+            ]
         }
     }
 }
