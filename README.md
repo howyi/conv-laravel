@@ -12,7 +12,7 @@ composer require "howyi/conv-laravel" --dev
 
 2. publish config (only Laravel)
 ```
-php artisan vendor:publish --provider="Conv\Laravel\ConvServiceProvider"
+php artisan vendor:publish --provider="Howyi\ConvLaravel\ConvServiceProvider"
 ```
 
 3. schema initialize (Laravel/Lumen)
