@@ -2,10 +2,10 @@
 
 namespace Howyi\ConvLaravel\Console;
 
-use Conv\Operator;
-use Conv\Structure\TableStructureInterface;
+use Howyi\Conv\Operator\ConsoleOperator;
+use Howyi\Conv\Structure\TableStructureInterface;
+use Howyi\Conv\CreateQueryReflector;
 use Illuminate\Console\Command;
-use Conv\CreateQueryReflector;
 
 class ConvReflectCommand extends Command
 {
@@ -40,7 +40,7 @@ class ConvReflectCommand extends Command
      */
     public function handle()
     {
-        $operator = new Operator(
+        $operator = new ConsoleOperator(
             $this->getHelper('question'),
             $this->input,
             $this->output

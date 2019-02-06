@@ -2,12 +2,12 @@
 
 namespace Howyi\ConvLaravel\Console;
 
-use Conv\DatabaseStructureFactory;
-use Conv\Migration\Table\TableMigrationInterface;
-use Conv\MigrationGenerator;
-use Conv\MigrationType;
-use Conv\Operator;
-use Conv\Structure\TableStructureInterface;
+use Howyi\Conv\DatabaseStructureFactory;
+use Howyi\Conv\Migration\Table\TableMigrationInterface;
+use Howyi\Conv\MigrationGenerator;
+use Howyi\Conv\MigrationType;
+use Howyi\Conv\Operator\ConsoleOperator;
+use Howyi\Conv\Structure\TableStructureInterface;
 use Illuminate\Console\Command;
 
 class ConvGenerateCommand extends Command
@@ -50,7 +50,7 @@ class ConvGenerateCommand extends Command
         };
 
         $pdo = \DB::connection()->getPdo();
-        $operator = new Operator(
+        $operator = new ConsoleOperator(
             $this->getHelper('question'),
             $this->input,
             $this->output
