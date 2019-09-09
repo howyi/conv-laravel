@@ -5,6 +5,7 @@ namespace Howyi\ConvLaravel;
 use Howyi\ConvLaravel\Console\ConvGenerateCommand;
 use Howyi\ConvLaravel\Console\ConvReflectCommand;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class ConvServiceProvider extends ServiceProvider
 {
@@ -36,6 +37,6 @@ class ConvServiceProvider extends ServiceProvider
 	 */
 	protected function isLumen()
 	{
-		return str_contains($this->app->version(), 'Lumen');
+		return Str::contains($this->app->version(), 'Lumen');
 	}
 }
