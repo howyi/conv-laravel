@@ -5,6 +5,12 @@ MySQL migration query auto generate on Laravel/Lumen
  <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--RjgVuhNV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/hpm2d58qbtlmwmw14lgl.gif">
 </p>
 
+## Requirements
+
+- PHP 8.1 or later
+- Laravel 5.5 through 13 (Laravel 13 requires PHP 8.3 or later)
+- Lumen applications using compatible illuminate/support and illuminate/console versions
+
 ## Install
 
 1. require library (Laravel/Lumen)
